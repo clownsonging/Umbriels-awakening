@@ -18,6 +18,12 @@ ModelImporter:
   - first:
       74: -236022367644965580
     second: Armature|Idle (1)
+  - first:
+      74: -8407302308426460532
+    second: Armature|Jump (1)
+  - first:
+      74: -6741707205621764231
+    second: Armature|Jump (2)
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -47,11 +53,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Idle (1)
-      takeName: Armature|Idle
+      name: Armature|Jump (1)
+      takeName: Armature|Jump
       internalID: 0
       firstFrame: 0
-      lastFrame: 41
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -76,19 +82,19 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle
-      takeName: Armature|Idle
+      name: Armature|Jump (2)
+      takeName: Armature|Jump
       internalID: 0
       firstFrame: 0
-      lastFrame: 41
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -116,8 +122,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
