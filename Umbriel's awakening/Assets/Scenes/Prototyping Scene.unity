@@ -228,13 +228,14 @@ GameObject:
   - component: {fileID: 452559370}
   - component: {fileID: 452559369}
   - component: {fileID: 452559368}
+  - component: {fileID: 452559372}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: TestCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &452559368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -311,6 +312,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452559372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452559367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efabafed04fc43c4a9caf4b0c12937d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+    m_Name: Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1a3138ce-a43b-4870-af32-c6641d67281b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: e5cf223b-00db-4e3c-874f-0075d2a40d8c
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 47a87145-22b4-493e-9922-b4c3e4943ed9
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: e1a7b856-3d57-4081-8ae8-d83ab1dd859e
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e048cdbf-8c53-4800-9182-9f73c2148252
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 34c6b74b-4efb-4ddb-8d34-1309555c116e
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controls
+      m_Flags: 8
 --- !u!1 &779878411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a148380ea6229d044a1f241ddfbb3cf2, type: 3}
@@ -325,20 +386,77 @@ MonoBehaviour:
   m_GameObject: {fileID: 779878411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398b7f362b9b80049881d411a09d86d6, type: 3}
+  m_Script: {fileID: 11500000, guid: d8914a18e873c974384c82744160ff12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 3
-  speed: 0
-  gravity: -3
-  rotationSpeed: 700
-  bullet: {fileID: 0}
-  ground:
-    serializedVersion: 2
-    m_Bits: 0
-  fireRate: 2
-  nextAttack: 0
-  cd: 0
+  animations: {fileID: 779878413}
+  dash: 0.25
+  movementControls:
+    m_Name: Movement Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 35abba56-544e-4d2e-98bb-8c33c814f646
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 652ec04b-0778-42d9-b40a-47e266205828
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: f2d8ed3b-52be-4473-be48-8dc1ec7a135b
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: e8d538aa-797e-41a5-b49a-978acc1d4932
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: b3aefb93-2e57-4b7f-afc1-2f0ed17bd82c
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 4de18504-2d85-4b97-a304-4f7246dfebbe
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Controls
+      m_Flags: 8
+  dashButton:
+    m_Name: Dash Button
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 246fc0d7-a08f-40cd-8e05-73b9e86fb8fe
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 594a5051-fb16-451f-b2c1-ceaaf3f62384
+      m_Path: <Keyboard>/space
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Dash Button
+      m_Flags: 0
+  direction: {x: 0, y: 0}
+  moving: 0
 --- !u!95 &779878413
 Animator:
   serializedVersion: 3
@@ -349,7 +467,7 @@ Animator:
   m_GameObject: {fileID: 779878411}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae22ca0cf010d9f4aaba7a4f86157d43, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -376,6 +494,67 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &779878416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779878411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ea7e9d3e18416428fcbd9661355c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrows:
+    m_Name: Arrows
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f4cdb9c1-caba-43f3-aba4-71eac4792425
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 7bbe70b3-09e5-4843-bf47-f322ba29ed60
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 7809ebea-2f1b-4c1d-8936-11fca7d79926
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 686c5a9f-5183-4c58-883f-530a2f03e15b
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows
+      m_Flags: 8
+    - m_Name: left
+      m_Id: cb1b533e-cb6e-485b-a9dc-e5cf299e7fac
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 6dc31d63-d803-441d-9cd0-8bb1cd15d2cc
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows
+      m_Flags: 8
+  player: {x: 0, y: 0, z: 0}
 --- !u!1 &1397002342
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +745,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a148380ea6229d044a1f241ddfbb3cf2, type: 3}
       propertyPath: m_Name
       value: Umbriel7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a148380ea6229d044a1f241ddfbb3cf2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3026774788540303176, guid: a148380ea6229d044a1f241ddfbb3cf2, type: 3}
       propertyPath: m_IsActive
