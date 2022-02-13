@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1263570974616873033}
   - component: {fileID: 2749096339018573804}
   - component: {fileID: 126725071629161254}
-  - component: {fileID: 3217315526726104717}
-  - component: {fileID: 1738236851594503138}
   m_Layer: 0
   m_Name: NorthTP
   m_TagString: Untagged
@@ -85,33 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3217315526726104717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928327580666573555}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.54, y: 1.03, z: 0.39}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401342}
---- !u!114 &1738236851594503138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928327580666573555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 1
-  map: {fileID: 0}
 --- !u!1 &2218491934146541874
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,15 +124,13 @@ GameObject:
   - component: {fileID: 3207799723434702017}
   - component: {fileID: 1957868809446816612}
   - component: {fileID: 4381800157322416046}
-  - component: {fileID: 5759612690795391383}
-  - component: {fileID: 1975338721620528605}
   m_Layer: 0
   m_Name: SouthTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3207799723434702017
 Transform:
   m_ObjectHideFlags: 0
@@ -227,33 +196,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5759612690795391383
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2868709909969219195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.54, y: 1.03, z: 0.39}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &1975338721620528605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2868709909969219195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 3
-  map: {fileID: 0}
 --- !u!1 &3547150758491624484
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,15 +207,13 @@ GameObject:
   - component: {fileID: 4211378567962349214}
   - component: {fileID: 999247076004577595}
   - component: {fileID: 3043024470148724209}
-  - component: {fileID: 8478419963723261263}
-  - component: {fileID: 5904303142940245780}
   m_Layer: 0
   m_Name: WestTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4211378567962349214
 Transform:
   m_ObjectHideFlags: 0
@@ -339,33 +279,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8478419963723261263
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547150758491624484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.54, y: 1.03, z: 0.39}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &5904303142940245780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547150758491624484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 4
-  map: {fileID: 0}
 --- !u!1 &4462154989616332242
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,15 +290,13 @@ GameObject:
   - component: {fileID: 3938137284685145960}
   - component: {fileID: 74530857606326477}
   - component: {fileID: 2804684985414376455}
-  - component: {fileID: 4618231853047898230}
-  - component: {fileID: 5724437313173839223}
   m_Layer: 0
   m_Name: EastTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3938137284685145960
 Transform:
   m_ObjectHideFlags: 0
@@ -451,33 +362,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4618231853047898230
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462154989616332242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.54, y: 1.03, z: 0.39}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &5724437313173839223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462154989616332242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 2
-  map: {fileID: 0}
 --- !u!1 &6938002676029239807
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +376,7 @@ GameObject:
   - component: {fileID: 8625639161588054818}
   m_Layer: 0
   m_Name: OrangeFull
-  m_TagString: Room
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

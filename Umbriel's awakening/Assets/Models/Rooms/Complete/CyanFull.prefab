@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2414267688319846329}
   m_Layer: 0
   m_Name: CyanFull
-  m_TagString: Room
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,15 +144,13 @@ GameObject:
   - component: {fileID: 4873892506812362131}
   - component: {fileID: 8362147652253655606}
   - component: {fileID: 6046266899231332092}
-  - component: {fileID: 1229100981284220310}
-  - component: {fileID: 5047272744987766219}
   m_Layer: 0
   m_Name: SouthTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4873892506812362131
 Transform:
   m_ObjectHideFlags: 0
@@ -218,33 +216,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1229100981284220310
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253549871009199913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.06, z: 0.58}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &5047272744987766219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253549871009199913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 3
-  map: {fileID: 0}
 --- !u!1 &5965912577732486272
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,15 +227,13 @@ GameObject:
   - component: {fileID: 6449433177549700666}
   - component: {fileID: 7939607380058763679}
   - component: {fileID: 5317574206855578965}
-  - component: {fileID: 2534954481944012561}
-  - component: {fileID: 7665624806354992995}
   m_Layer: 0
   m_Name: EastTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6449433177549700666
 Transform:
   m_ObjectHideFlags: 0
@@ -330,33 +299,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2534954481944012561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5965912577732486272}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.06, z: 0.58}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &7665624806354992995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5965912577732486272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 2
-  map: {fileID: 0}
 --- !u!1 &6781837615171652982
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,15 +310,13 @@ GameObject:
   - component: {fileID: 6149170294079625164}
   - component: {fileID: 7131984753838725225}
   - component: {fileID: 4980155528427596963}
-  - component: {fileID: 2387619986838124065}
-  - component: {fileID: 3014410946188805740}
   m_Layer: 0
   m_Name: WestTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6149170294079625164
 Transform:
   m_ObjectHideFlags: 0
@@ -442,33 +382,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2387619986838124065
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781837615171652982}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.06, z: 0.58}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
---- !u!114 &3014410946188805740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781837615171652982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 4
-  map: {fileID: 0}
 --- !u!1 &8495235875665275809
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,15 +393,13 @@ GameObject:
   - component: {fileID: 9128502499108368667}
   - component: {fileID: 5260537779599818430}
   - component: {fileID: 7991031110232525428}
-  - component: {fileID: 8973258138490840566}
-  - component: {fileID: 7984845646890517464}
   m_Layer: 0
   m_Name: NorthTP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9128502499108368667
 Transform:
   m_ObjectHideFlags: 0
@@ -554,30 +465,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8973258138490840566
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495235875665275809}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.06, z: 0.58}
-  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401342}
---- !u!114 &7984845646890517464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495235875665275809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 1
-  map: {fileID: 0}
