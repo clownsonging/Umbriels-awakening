@@ -28,7 +28,7 @@ public class RotateControl : MonoBehaviour
 
     private float Direction()
     {
-        Debug.Log(arrows.ReadValue<Vector2>());
+        //Debug.Log(arrows.ReadValue<Vector2>());
         Vector2 v2 = arrows.ReadValue<Vector2>();
         if (v2.x == 1)
         {
