@@ -15,6 +15,7 @@ public class Generation : MonoBehaviour
 
     private GameObject room;
 
+    private bool tileEmpty = false;
     private int height;
     private int width;
     private int noRooms;
@@ -26,8 +27,9 @@ public class Generation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateFloor();
-        NewRoom(0);
+
+        //GenerateFloor();
+        //NewRoom(0);
     }
 
     // Update is called once per frame
@@ -92,14 +94,6 @@ public class Generation : MonoBehaviour
         noRooms = height + width;
         RoomGrid = new GameObject[width, height];
 
-        for (int x = 0; x < RoomGrid.GetLength(0); x++)
-        {
-            for (int y = 0; y < RoomGrid.GetLength(1); y++)
-            {
-                RoomGrid[x, y] = nullRoom;
-            }
-        }
-
         //Sets first room type
         roomType = Random.Range(0, roomList.Length);
         room = roomList[roomType];
@@ -119,31 +113,33 @@ public class Generation : MonoBehaviour
             int i = Random.Range(1, height - 1);
             int j = Random.Range(1, width - 1);
 
-            if (RoomGrid[j, i] == null)
+            if (RoomGrid[j, i] != room)
             {
-                if (RoomGrid[j + 1, i].tag == "Room")
-                {
-                    validSpawn = true;
+                tileEmpty = true;
+            }
 
-                }
+            if (RoomGrid[j + 1, i] != null && tileEmpty == true)
+            {
+                validSpawn = true;
 
-                if (RoomGrid[j - 1, i].tag == "Room")
-                {
-                    validSpawn = true;
+            }
 
-                }
+            if (RoomGrid[j - 1, i] != null && tileEmpty == true)
+            {
+                validSpawn = true;
 
-                if (RoomGrid[j, i + 1].tag == "Room")
-                {
-                    validSpawn = true;
+            }
 
-                }
+            if (RoomGrid[j, i + 1] != null && tileEmpty == true)
+            {
+                validSpawn = true;
 
-                if (RoomGrid[j, i - 1].tag == "Room")
-                {
-                    validSpawn = true;
+            }
 
-                }
+            if (RoomGrid[j, i - 1] != null && tileEmpty == true)
+            {
+                validSpawn = true;
+
             }
 
             //spawns room
@@ -160,6 +156,8 @@ public class Generation : MonoBehaviour
             }
         }
         roomGrid[playersRoomX, playersRoomY].SetActive(true);
+        player.transform.position = roomGrid[playersRoomX, playersRoomY].transform.position;
+        Debug.Log("Finished rooms");
     }
     void TeleportersSet(int x, int y, bool north, bool east, bool south, bool west)
     {
@@ -190,10 +188,12 @@ public class Generation : MonoBehaviour
         //West
         if (direction == 4)
         {
-            playersRoomY--;
+            playersRoomX--;
         }
         GameObject newRoom = RoomGrid[playersRoomX, playersRoomY];
+        Debug.Log(playersRoomX + " + " + playersRoomY);
         player.transform.position = newRoom.transform.Find("Spawn").transform.position;
+        RoomGrid[playersRoomX, playersRoomY].SetActive(true);
 
         if (RoomGrid[playersRoomX + 1, playersRoomY] != null)
         {

@@ -32,42 +32,42 @@ public class RotateControl : MonoBehaviour
         Vector2 v2 = arrows.ReadValue<Vector2>();
         if (v2.x == 1)
         {
-            angle = 90;
+            angle = 135;
             return angle; 
         }
         if (v2.x == -1)
         {
-            angle = 270;
+            angle = 315;
             return angle;
         }
         if (v2.y == 1)
         {
-            angle = 0;
+            angle =45;
             return angle;
         }
         if (v2.y == -1)
         {
-            angle = 180;
+            angle = 225;
             return angle;
         }
         if (v2.x > .1 && v2.y > .1)
         {
-            angle = 45;
+            angle = 90;
             return angle;
         }
         if (v2.x < -.1 && v2.y < -.1)
         {
-            angle = 225;
+            angle = 270;
             return angle;
         }
         if (v2.x > .1 && v2.y < -.1)
         {
-            angle = 135;
+            angle = 180;
             return angle;
         }
         if (v2.x < -.1 && v2.y > .1)
         {
-            angle = 315;
+            angle = 0;
             return angle;
         }
         else
