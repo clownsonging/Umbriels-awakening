@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
 
 public class Generation : MonoBehaviour
 {
@@ -27,9 +28,8 @@ public class Generation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        //GenerateFloor();
-        //NewRoom(0);
+        GenerateFloor();
+        NewRoom(0);
     }
 
     // Update is called once per frame
@@ -212,5 +212,21 @@ public class Generation : MonoBehaviour
             north = true;
         }
         TeleportersSet(playersRoomX, playersRoomY, north, east, south, west);
+    }
+
+    void PostSpawn()
+    {
+        GameObject compare;
+        compare = RoomGrid[0, 0];
+        for (int k = 0; k < roomGrid.GetLength(0); k++)
+        {
+            for (int l = 0; l < roomGrid.GetLength(1); l++)
+            {
+                if (compare == roomGrid[k,l])
+                {
+                    Destroy(roomGrid[k, l]);
+                }
+            }
+        }
     }
 }
