@@ -11,7 +11,6 @@ public class Generation : MonoBehaviour
 
     [SerializeField] private GameObject[,] roomGrid;
     [SerializeField] private GameObject roomStore;
-    [SerializeField] private GameObject nullRoom;
 
     private GameObject room;
 
@@ -20,6 +19,7 @@ public class Generation : MonoBehaviour
     private int noRooms;
     private int roomType;
     private bool validSpawn = false;
+    private bool tileEmpty;
 
     public GameObject[,] RoomGrid { get => roomGrid; set => roomGrid = value; }
 
@@ -27,7 +27,7 @@ public class Generation : MonoBehaviour
     void Start()
     {
         GenerateFloor();
-        NewRoom(0);
+        Teleporters();
     }
 
     // Update is called once per frame
@@ -92,24 +92,21 @@ public class Generation : MonoBehaviour
         noRooms = height + width;
         RoomGrid = new GameObject[width, height];
 
-        for (int x = 0; x < RoomGrid.GetLength(0); x++)
-        {
-            for (int y = 0; y < RoomGrid.GetLength(1); y++)
-            {
-                RoomGrid[x, y] = nullRoom;
-            }
-        }
-
         //Sets first room type
         roomType = Random.Range(0, roomList.Length);
         room = roomList[roomType];
 
         //spawns starting room
         RoomGrid[Mathf.RoundToInt(width / 2), Mathf.RoundToInt(height / 2)] = room;
+        playersRoomX = Mathf.RoundToInt(width / 2);
+        playersRoomY = Mathf.RoundToInt(height / 2);
         GameObject spawn = Instantiate(room, new Vector3(Mathf.RoundToInt(width / 2) * 20, 0, Mathf.RoundToInt(height / 2) * 20), Quaternion.identity);
+        player.transform.position = new Vector3(spawn.transform.position.x + 5, spawn.transform.position.y + 20, spawn.transform.position.z + 1);
         Destroy(spawn);
         noRooms--;
         Debug.Log("Spawned first room at " + width + " width & " + height + " height.");
+
+        player.transform.position = new Vector3(spawn.transform.position.x + 5, spawn.transform.position.y, spawn.transform.position.z + 1);
 
         //loops adding the rooms
         while (noRooms >= 0)
@@ -119,32 +116,35 @@ public class Generation : MonoBehaviour
             int i = Random.Range(1, height - 1);
             int j = Random.Range(1, width - 1);
 
-            if (RoomGrid[j, i] == null)
+            if (RoomGrid[j, i] != room)
             {
-                if (RoomGrid[j + 1, i].tag == "Room")
-                {
-                    validSpawn = true;
-
-                }
-
-                if (RoomGrid[j - 1, i].tag == "Room")
-                {
-                    validSpawn = true;
-
-                }
-
-                if (RoomGrid[j, i + 1].tag == "Room")
-                {
-                    validSpawn = true;
-
-                }
-
-                if (RoomGrid[j, i - 1].tag == "Room")
-                {
-                    validSpawn = true;
-
-                }
+                tileEmpty = true;
             }
+
+            if (RoomGrid[j + 1, i] != null && tileEmpty == true)
+            {
+                validSpawn = true;
+
+            }
+
+            if (RoomGrid[j - 1, i] != null && tileEmpty == true)
+            {
+                validSpawn = true;
+
+            }
+
+            if (RoomGrid[j, i + 1] != null && tileEmpty == true)
+            {
+                validSpawn = true;
+
+            }
+
+            if (RoomGrid[j, i - 1] != null && tileEmpty == true)
+            {
+                validSpawn = true;
+
+            }
+
 
             //spawns room
             if (validSpawn == true)
@@ -154,24 +154,33 @@ public class Generation : MonoBehaviour
                 RoomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
                 noRooms--;
                // Debug.Log("Spawned room at " + j + " width & " + i + " height.");
-                playersRoomX = j;
-                playersRoomY = i;
-                RoomGrid[j, i].SetActive(false);
+                tileEmpty = false;
             }
         }
-        roomGrid[playersRoomX, playersRoomY].SetActive(true);
     }
-    void TeleportersSet(int x, int y, bool north, bool east, bool south, bool west)
+    void Teleporters()
     {
-        roomGrid[x,y].GetComponent<RoomNavigation>().Portals(north, east, south, west);
+        for(int k = 0; k < roomGrid.GetLength(0); k++)
+        {
+            for(int l = 0; l < roomGrid.GetLength(1); l++)
+            {
+                if (roomGrid[k,l] != null)
+                {
+                    bool north = CheckNeighbour(k, l)[0];
+                    bool east = CheckNeighbour(k, l)[1];
+                    bool south = CheckNeighbour(k, l)[2];
+                    bool west = CheckNeighbour(k, l)[3];
+
+                    RoomNavigation temp = roomGrid[k, l].GetComponent<RoomNavigation>();
+                    temp.Portals(north, east, south, west);
+                    //Debug.Log("K: " + k + " L: " + l);
+                }
+            }
+        }
     }
 
-    public void NewRoom(int direction)
+    public void newRoom(int direction)
     {
-        bool north = false;
-        bool east = false;
-        bool south = false;
-        bool west = false;
         //North
         if(direction == 1)
         {
@@ -192,25 +201,7 @@ public class Generation : MonoBehaviour
         {
             playersRoomY--;
         }
-        GameObject newRoom = RoomGrid[playersRoomX, playersRoomY];
+        GameObject newRoom = roomGrid[playersRoomX, playersRoomY];
         player.transform.position = newRoom.transform.Find("Spawn").transform.position;
-
-        if (RoomGrid[playersRoomX + 1, playersRoomY] != null)
-        {
-            east = true;
-        }
-        if (RoomGrid[playersRoomX, playersRoomY -1] != null)
-        {
-            south = true;
-        }
-        if (RoomGrid[playersRoomX-1, playersRoomY] != null)
-        {
-            west = true;
-        }
-        if (RoomGrid[playersRoomX, playersRoomY + 1] != null)
-        {
-            north = true;
-        }
-        TeleportersSet(playersRoomX, playersRoomY, north, east, south, west);
     }
 }
