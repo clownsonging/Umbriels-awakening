@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7027470826489329011}
   m_Layer: 0
   m_Name: RedFull
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +144,8 @@ GameObject:
   - component: {fileID: 5534533295975966586}
   - component: {fileID: 8890465346032969951}
   - component: {fileID: 6666928788613880853}
+  - component: {fileID: 7978060842323337485}
+  - component: {fileID: 8194657405203593400}
   m_Layer: 0
   m_Name: NorthTP
   m_TagString: Untagged
@@ -216,6 +218,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7978060842323337485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153609019835317696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1.06, z: 0.42}
+  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401342}
+--- !u!114 &8194657405203593400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153609019835317696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  map: {fileID: 0}
 --- !u!1 &6965738200016958177
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +256,8 @@ GameObject:
   - component: {fileID: 7773377128624646235}
   - component: {fileID: 6651621784793540606}
   - component: {fileID: 8911420301125784372}
+  - component: {fileID: 5247854859032398567}
+  - component: {fileID: 6561180210711185457}
   m_Layer: 0
   m_Name: EastTP
   m_TagString: Untagged
@@ -299,6 +330,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5247854859032398567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965738200016958177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1.06, z: 0.42}
+  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
+--- !u!114 &6561180210711185457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965738200016958177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 2
+  map: {fileID: 0}
 --- !u!1 &7817551299265092375
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +368,8 @@ GameObject:
   - component: {fileID: 7437226187910709677}
   - component: {fileID: 5807829621787954696}
   - component: {fileID: 8610171159221729986}
+  - component: {fileID: 8520101082718769596}
+  - component: {fileID: 8577246464583670471}
   m_Layer: 0
   m_Name: WestTP
   m_TagString: Untagged
@@ -382,6 +442,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8520101082718769596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817551299265092375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1.06, z: 0.42}
+  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
+--- !u!114 &8577246464583670471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817551299265092375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 4
+  map: {fileID: 0}
 --- !u!1 &8829364073237569864
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +480,8 @@ GameObject:
   - component: {fileID: 8197645836840844274}
   - component: {fileID: 5074493423006037079}
   - component: {fileID: 7028095539229245597}
+  - component: {fileID: 5014837740045529965}
+  - component: {fileID: 7289984545316571463}
   m_Layer: 0
   m_Name: SouthTP
   m_TagString: Untagged
@@ -465,3 +554,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5014837740045529965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829364073237569864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1.06, z: 0.42}
+  m_Center: {x: 0.0013807341, y: -0.006831512, z: -0.008401819}
+--- !u!114 &7289984545316571463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829364073237569864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69196723abb658d46b6b7cdba9d25c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 3
+  map: {fileID: 0}
