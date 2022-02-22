@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
+
 
 public class Generation : MonoBehaviour
 {
@@ -10,9 +10,12 @@ public class Generation : MonoBehaviour
     [SerializeField] private int playersRoomX;
     [SerializeField] private int playersRoomY;
 
+
+    [SerializeField] private GameObject itemRoom;
+    [SerializeField] private GameObject bossRoom;
+    [SerializeField] private GameObject shopRoom;
     [SerializeField] private GameObject[,] roomGrid;
     [SerializeField] private GameObject roomStore;
-    [SerializeField] private GameObject nullRoom;
 
     private GameObject room;
 
@@ -157,6 +160,9 @@ public class Generation : MonoBehaviour
         }
         roomGrid[playersRoomX, playersRoomY].SetActive(true);
         player.transform.position = roomGrid[playersRoomX, playersRoomY].transform.position;
+        SpecialSpawn(itemRoom);
+        SpecialSpawn(bossRoom);
+        SpecialSpawn(shopRoom);
         Debug.Log("Finished rooms");
     }
     void TeleportersSet(int x, int y, bool north, bool east, bool south, bool west)
@@ -226,6 +232,69 @@ public class Generation : MonoBehaviour
                 {
                     Destroy(roomGrid[k, l]);
                 }
+            }
+        }
+    }
+
+    void SpecialSpawn(GameObject room)
+    {
+        bool placed = false;
+        while (placed == false)
+        {
+            validSpawn = false;
+            bool adjacent = false;
+            int i = Random.Range(1, height - 1);
+            int j = Random.Range(1, width - 1);
+
+            if (RoomGrid[j, i] != room)
+            {
+                tileEmpty = true;
+            }
+
+            if (RoomGrid[j + 1, i] != null && tileEmpty == true && adjacent == false)
+            {
+                validSpawn = true;
+                adjacent = true;
+            }
+            else
+            {
+                validSpawn = false;
+            }
+
+            if (RoomGrid[j - 1, i] != null && tileEmpty == true && adjacent == false)
+            {
+                validSpawn = true;
+                adjacent = true;
+            }
+            else
+            {
+                validSpawn = false;
+            }
+
+            if (RoomGrid[j, i + 1] != null && tileEmpty == true && adjacent == false)
+            {
+                validSpawn = true;
+                adjacent = true;
+            }
+            else
+            {
+                validSpawn = false;
+            }
+
+            if (RoomGrid[j, i - 1] != null && tileEmpty == true && adjacent == false)
+            {
+                validSpawn = true;
+                adjacent = true;
+            }
+            else
+            {
+                validSpawn = false;
+            }
+            if (validSpawn == true)
+            {
+                RoomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
+                RoomGrid[j, i].SetActive(false);
+                placed = true;
             }
         }
     }

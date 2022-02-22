@@ -1,32 +1,29 @@
 fileFormatVersion: 2
-guid: a148380ea6229d044a1f241ddfbb3cf2
+guid: 373b3960f9bee174b930fa47e67c402a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -1437223564310770781
-    second: Armature|0Tpose
+      74: -2093545843001404265
+    second: Root|0Tpose
   - first:
-      74: -8945691123924629249
-    second: Armature|Idle
+      74: 321180322946452968
+    second: Root|Attack
   - first:
-      74: 1079665108409675491
-    second: Armature|Jump
+      74: -344371176300267848
+    second: Root|Bored head
   - first:
-      74: -7551964380084998518
-    second: Armature|Run
+      74: 2910742486769232160
+    second: Root|Idle
   - first:
-      74: -236022367644965580
-    second: Armature|Idle (1)
+      74: -1498742742090869654
+    second: Root|Stretch
   - first:
-      74: -8407302308426460532
-    second: Armature|Jump (1)
-  - first:
-      74: -6741707205621764231
-    second: Armature|Jump (2)
+      74: 8090150874587106093
+    second: Root|Idle (1)
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -53,11 +50,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Jump (1)
-      takeName: Armature|Jump
+      name: Root|Idle (1)
+      takeName: Root|Idle
       internalID: 0
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -82,40 +79,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Jump (2)
-      takeName: Armature|Jump
+      name: Root|Attack
+      takeName: Root|Attack
       internalID: 0
       firstFrame: 0
-      lastFrame: 60
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Jump
-      takeName: Armature|Jump
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 60
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -123,7 +91,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -140,11 +108,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Run
-      takeName: Armature|Run
+      name: Root|Bored head
+      takeName: Root|Bored head
       internalID: 0
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Root|Idle
+      takeName: Root|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -152,6 +149,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Root|Stretch
+      takeName: Root|Stretch
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -174,7 +200,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
