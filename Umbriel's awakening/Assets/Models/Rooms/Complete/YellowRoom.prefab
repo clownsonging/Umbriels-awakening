@@ -581,3 +581,4 @@ MonoBehaviour:
   South: {fileID: 14899874829220161}
   East: {fileID: 1357706713889303423}
   West: {fileID: 4507358004069405585}
+  enemyCount: 1

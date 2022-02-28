@@ -103,6 +103,7 @@ MonoBehaviour:
   South: {fileID: 4871728637351600509}
   East: {fileID: 5870652297957929795}
   West: {fileID: 9016890351855995821}
+  enemyCount: 4
 --- !u!1 &4582934159393558906
 GameObject:
   m_ObjectHideFlags: 0

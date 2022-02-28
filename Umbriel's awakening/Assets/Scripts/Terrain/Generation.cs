@@ -219,6 +219,7 @@ public class Generation : MonoBehaviour
             north = true;
         }
         TeleportersSet(playersRoomX, playersRoomY, north, east, south, west);
+        player.GetComponent<PlayerStats>().NewRoom(roomGrid[playersRoomX, playersRoomY].GetComponent<RoomNavigation>());
     }
 
     void PostSpawn()

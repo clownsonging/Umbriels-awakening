@@ -8,6 +8,7 @@ public class RoomNavigation : MonoBehaviour
     [SerializeField] private GameObject South;
     [SerializeField] private GameObject East;
     [SerializeField] private GameObject West;
+    [SerializeField] private int enemyCount;
     private bool northBool;
     private bool southBool;
     private bool eastBool;
@@ -28,5 +29,10 @@ public class RoomNavigation : MonoBehaviour
         South.SetActive(southBool);
         East.SetActive(eastBool);
         West.SetActive(westBool);
+    }
+
+    public int EnemyCount()
+    {
+        return enemyCount;
     }
 }

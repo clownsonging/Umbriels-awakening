@@ -5,6 +5,7 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int hp = 100;
     [SerializeField] private int gold = 30;
+    [SerializeField] private int bombs = 3;
     [SerializeField] private int enemiesLeft = 1;
     [SerializeField] private GameObject generationContainer;
     // Start is called before the first frame update
@@ -28,8 +29,8 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void NewRoom(int enemyCount)
+    public void NewRoom(RoomNavigation room)
     {
-        enemiesLeft = enemyCount;
+        enemiesLeft = room.EnemyCount();
     }
 }
