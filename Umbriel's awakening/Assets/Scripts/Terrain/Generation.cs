@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class Generation : MonoBehaviour
@@ -33,12 +34,12 @@ public class Generation : MonoBehaviour
     {
         GenerateFloor();
         NewRoom(0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public bool[] CheckNeighbour(int x, int y)
@@ -297,5 +298,10 @@ public class Generation : MonoBehaviour
                 placed = true;
             }
         }
+    }
+
+    public void RoomCleared()
+    {
+        RoomGrid[playersRoomX, playersRoomY].GetComponent<RoomNavigation>().ActivatePortals();
     }
 }

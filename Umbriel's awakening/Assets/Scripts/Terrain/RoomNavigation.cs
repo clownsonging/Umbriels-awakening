@@ -8,12 +8,25 @@ public class RoomNavigation : MonoBehaviour
     [SerializeField] private GameObject South;
     [SerializeField] private GameObject East;
     [SerializeField] private GameObject West;
+    private bool northBool;
+    private bool southBool;
+    private bool eastBool;
+    private bool westBool;
+
     // Start is called before the first frame update
     public void Portals(bool north, bool east, bool south, bool west)
     {
-        North.SetActive(north);
-        South.SetActive(south);
-        East.SetActive(east);
-        West.SetActive(west);
+        northBool = north;
+        southBool = south;
+        eastBool = east;
+        westBool = west;
+    }
+
+    public void ActivatePortals()
+    {
+        North.SetActive(northBool);
+        South.SetActive(southBool);
+        East.SetActive(eastBool);
+        West.SetActive(westBool);
     }
 }
