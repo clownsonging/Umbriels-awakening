@@ -6,17 +6,20 @@ using UnityEngine.InputSystem;
 
 public class Generation : MonoBehaviour
 {
+    [Header("Player Variables")]
     [SerializeField] private GameObject[] roomList;
     [SerializeField] private GameObject player;
     [SerializeField] private int playersRoomX;
     [SerializeField] private int playersRoomY;
 
-
+    [Header("Room Variables")]
     [SerializeField] private GameObject itemRoom;
     [SerializeField] private GameObject bossRoom;
     [SerializeField] private GameObject shopRoom;
     [SerializeField] private GameObject[,] roomGrid;
     [SerializeField] private GameObject roomStore;
+    [SerializeField] private GameObject coin;
+
 
     private GameObject room;
 
@@ -93,17 +96,17 @@ public class Generation : MonoBehaviour
     void GenerateFloor()
     {
         //sets up counters and such
-        height = Random.Range(6, 50);
-        width = Random.Range(6, 50);
+        height = Random.Range(6, 10);
+        width = Random.Range(6, 10);
         noRooms = height + width;
-        RoomGrid = new GameObject[width, height];
+        roomGrid = new GameObject[width, height];
 
         //Sets first room type
         roomType = Random.Range(0, roomList.Length);
         room = roomList[roomType];
 
         //spawns starting room
-        RoomGrid[Mathf.RoundToInt(width / 2), Mathf.RoundToInt(height / 2)] = room;
+        roomGrid[Mathf.RoundToInt(width / 2), Mathf.RoundToInt(height / 2)] = room;
         GameObject spawn = Instantiate(room, new Vector3(Mathf.RoundToInt(width / 2) * 20, 0, Mathf.RoundToInt(height / 2) * 20), Quaternion.identity);
         Destroy(spawn);
         noRooms--;
@@ -117,33 +120,29 @@ public class Generation : MonoBehaviour
             int i = Random.Range(1, height - 1);
             int j = Random.Range(1, width - 1);
 
-            if (RoomGrid[j, i] != room)
+            if (roomGrid[j, i] != room)
             {
                 tileEmpty = true;
             }
 
-            if (RoomGrid[j + 1, i] != null && tileEmpty == true)
+            if (roomGrid[j + 1, i] != null && tileEmpty == true)
             {
                 validSpawn = true;
-
             }
 
-            if (RoomGrid[j - 1, i] != null && tileEmpty == true)
+            if (roomGrid[j - 1, i] != null && tileEmpty == true)
             {
                 validSpawn = true;
-
             }
 
-            if (RoomGrid[j, i + 1] != null && tileEmpty == true)
+            if (roomGrid[j, i + 1] != null && tileEmpty == true)
             {
                 validSpawn = true;
-
             }
 
-            if (RoomGrid[j, i - 1] != null && tileEmpty == true)
+            if (roomGrid[j, i - 1] != null && tileEmpty == true)
             {
                 validSpawn = true;
-
             }
 
             //spawns room
@@ -151,12 +150,12 @@ public class Generation : MonoBehaviour
             {
                 roomType = Random.Range(0, roomList.Length);
                 room = roomList[roomType];
-                RoomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
+                roomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
                 noRooms--;
                // Debug.Log("Spawned room at " + j + " width & " + i + " height.");
                 playersRoomX = j;
                 playersRoomY = i;
-                RoomGrid[j, i].SetActive(false);
+                roomGrid[j, i].SetActive(false);
             }
         }
         roomGrid[playersRoomX, playersRoomY].SetActive(true);
@@ -197,24 +196,23 @@ public class Generation : MonoBehaviour
         {
             playersRoomX--;
         }
-        GameObject newRoom = RoomGrid[playersRoomX, playersRoomY];
-        Debug.Log(playersRoomX + " + " + playersRoomY);
+        GameObject newRoom = roomGrid[playersRoomX, playersRoomY];
         player.transform.position = newRoom.transform.Find("Spawn").transform.position;
-        RoomGrid[playersRoomX, playersRoomY].SetActive(true);
+        roomGrid[playersRoomX, playersRoomY].SetActive(true);
 
-        if (RoomGrid[playersRoomX + 1, playersRoomY] != null)
+        if (roomGrid[playersRoomX + 1, playersRoomY] != null)
         {
             east = true;
         }
-        if (RoomGrid[playersRoomX, playersRoomY -1] != null)
+        if (roomGrid[playersRoomX, playersRoomY -1] != null)
         {
             south = true;
         }
-        if (RoomGrid[playersRoomX-1, playersRoomY] != null)
+        if (roomGrid[playersRoomX-1, playersRoomY] != null)
         {
             west = true;
         }
-        if (RoomGrid[playersRoomX, playersRoomY + 1] != null)
+        if (roomGrid[playersRoomX, playersRoomY + 1] != null)
         {
             north = true;
         }
@@ -225,7 +223,7 @@ public class Generation : MonoBehaviour
     void PostSpawn()
     {
         GameObject compare;
-        compare = RoomGrid[0, 0];
+        compare = roomGrid[0, 0];
         for (int k = 0; k < roomGrid.GetLength(0); k++)
         {
             for (int l = 0; l < roomGrid.GetLength(1); l++)
@@ -248,12 +246,12 @@ public class Generation : MonoBehaviour
             int i = Random.Range(1, height - 1);
             int j = Random.Range(1, width - 1);
 
-            if (RoomGrid[j, i] != room)
+            if (roomGrid[j, i] != room)
             {
                 tileEmpty = true;
             }
 
-            if (RoomGrid[j + 1, i] != null && tileEmpty == true && adjacent == false)
+            if (roomGrid[j + 1, i] != null && tileEmpty == true && adjacent == false)
             {
                 validSpawn = true;
                 adjacent = true;
@@ -263,7 +261,7 @@ public class Generation : MonoBehaviour
                 validSpawn = false;
             }
 
-            if (RoomGrid[j - 1, i] != null && tileEmpty == true && adjacent == false)
+            if (roomGrid[j - 1, i] != null && tileEmpty == true && adjacent == false)
             {
                 validSpawn = true;
                 adjacent = true;
@@ -273,7 +271,7 @@ public class Generation : MonoBehaviour
                 validSpawn = false;
             }
 
-            if (RoomGrid[j, i + 1] != null && tileEmpty == true && adjacent == false)
+            if (roomGrid[j, i + 1] != null && tileEmpty == true && adjacent == false)
             {
                 validSpawn = true;
                 adjacent = true;
@@ -283,7 +281,7 @@ public class Generation : MonoBehaviour
                 validSpawn = false;
             }
 
-            if (RoomGrid[j, i - 1] != null && tileEmpty == true && adjacent == false)
+            if (roomGrid[j, i - 1] != null && tileEmpty == true && adjacent == false)
             {
                 validSpawn = true;
                 adjacent = true;
@@ -294,8 +292,8 @@ public class Generation : MonoBehaviour
             }
             if (validSpawn == true)
             {
-                RoomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
-                RoomGrid[j, i].SetActive(false);
+                roomGrid[j, i] = Instantiate(room, new Vector3((j * 20) + j, 0, (i * 20) + i), Quaternion.identity, roomStore.transform);
+                roomGrid[j, i].SetActive(false);
                 placed = true;
             }
         }
@@ -303,6 +301,12 @@ public class Generation : MonoBehaviour
 
     public void RoomCleared()
     {
-        RoomGrid[playersRoomX, playersRoomY].GetComponent<RoomNavigation>().ActivatePortals();
+        roomGrid[playersRoomX, playersRoomY].GetComponent<RoomNavigation>().ActivatePortals();
+        int coinAmount = Random.Range(1, 5);
+        while(coinAmount > 0)
+        {
+            Instantiate(coin, new Vector3(roomGrid[playersRoomX, playersRoomY].transform.Find("Spawn").transform.position.x + Random.Range(0,3), roomGrid[playersRoomX, playersRoomY].transform.Find("Spawn").transform.position.y - .5f, roomGrid[playersRoomX, playersRoomY].transform.Find("Spawn").transform.position.z + Random.Range(0, 3)), Quaternion.identity);
+            coinAmount--;
+        }
     }
 }

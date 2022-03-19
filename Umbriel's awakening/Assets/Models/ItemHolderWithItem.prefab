@@ -129,5 +129,4 @@ MonoBehaviour:
   items:
   - {fileID: 919132149155446097, guid: de2f086ac4f8d82418e6603f11026a28, type: 3}
   - {fileID: 919132149155446097, guid: ef7b75c0567a99d4d8aa6652a09bbc95, type: 3}
-  - {fileID: 4185288293250618125, guid: 4d09241d8b673a4418ec794020cc002d, type: 3}
   spawn: {fileID: 2352132904865366996}

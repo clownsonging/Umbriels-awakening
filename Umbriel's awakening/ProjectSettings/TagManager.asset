@@ -8,6 +8,12 @@ TagManager:
   - TopHat
   - Boots
   - belt
+  - PlayerAttack
+  - Enemy
+  - Coin
+  - NullRoom
+  - nullRoom
+  - SpecialRoom
   layers:
   - Default
   - TransparentFX

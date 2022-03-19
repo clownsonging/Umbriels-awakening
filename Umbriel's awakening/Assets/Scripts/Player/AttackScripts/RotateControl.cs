@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class RotateControl : MonoBehaviour
 {
+    [SerializeField] private AttackScript attack;
     public InputAction arrows;
     public Vector3 player;
     float angle;
@@ -33,41 +34,49 @@ public class RotateControl : MonoBehaviour
         if (v2.x == 1)
         {
             angle = 135;
-            return angle; 
+            attack.Fire();
+            return angle;
         }
         if (v2.x == -1)
         {
             angle = 315;
+            attack.Fire();
             return angle;
         }
         if (v2.y == 1)
         {
             angle =45;
+            attack.Fire();
             return angle;
         }
         if (v2.y == -1)
         {
             angle = 225;
+            attack.Fire();
             return angle;
         }
         if (v2.x > .1 && v2.y > .1)
         {
             angle = 90;
+            attack.Fire();
             return angle;
         }
         if (v2.x < -.1 && v2.y < -.1)
         {
             angle = 270;
+            attack.Fire();
             return angle;
         }
         if (v2.x > .1 && v2.y < -.1)
         {
             angle = 180;
+            attack.Fire();
             return angle;
         }
         if (v2.x < -.1 && v2.y > .1)
         {
             angle = 0;
+            attack.Fire();
             return angle;
         }
         else

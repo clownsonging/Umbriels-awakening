@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoomNavigation : MonoBehaviour
 {
+    [SerializeField] private int x;
+    [SerializeField] private int y;
     [SerializeField] private GameObject North;
     [SerializeField] private GameObject South;
     [SerializeField] private GameObject East;
@@ -34,5 +36,11 @@ public class RoomNavigation : MonoBehaviour
     public int EnemyCount()
     {
         return enemyCount;
+    }
+    
+    public void SetPosition(int i, int j)
+    {
+        x = i;
+        y = j;
     }
 }

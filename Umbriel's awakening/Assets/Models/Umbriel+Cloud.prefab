@@ -7956,8 +7956,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.36, y: 2.61, z: 1.61}
+  m_Center: {x: 0, y: 0.12, z: -0.21}
 --- !u!95 &5952026194380009070
 Animator:
   serializedVersion: 3
@@ -7989,6 +7989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ea7e9d3e18416428fcbd9661355c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 0}
   arrows:
     m_Name: Arrows
     m_Type: 0

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Teleporters : MonoBehaviour
 {
     [SerializeField] private int direction;
-    [SerializeField] private Generation map;
+    [SerializeField] private GenScript map;
     // Start is called before the first frame update
     void Start()
     {
-        map = GameObject.Find("Generation").GetComponent<Generation>();
+        map = GameObject.Find("Generation2.0").GetComponent<GenScript>();
     }
 
     private void OnTriggerEnter()
