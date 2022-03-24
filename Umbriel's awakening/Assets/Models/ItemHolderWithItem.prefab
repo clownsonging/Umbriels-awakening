@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6348373707046494771}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
-  - component: {fileID: 7879083646555505596}
+  - component: {fileID: 3477178948903251300}
   m_Layer: 0
   m_Name: ItemHolderWithItem
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7879083646555505596
+--- !u!114 &3477178948903251300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,10 +123,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4953387201821695718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265d9c1a013ecb5428831599aa67b10a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 919132149155446097, guid: de2f086ac4f8d82418e6603f11026a28, type: 3}
-  - {fileID: 919132149155446097, guid: ef7b75c0567a99d4d8aa6652a09bbc95, type: 3}
-  spawn: {fileID: 2352132904865366996}
+  itemList:
+  - {fileID: 4264455655047474076, guid: 631495102091fa846954627871f6d4b2, type: 3}
+  - {fileID: 3337134903799614719, guid: 669ed2c625621cb4c84e6b5f460ee180, type: 3}
+  rareItemList: []
+  spawnLocation: {fileID: 2352132904865366996}

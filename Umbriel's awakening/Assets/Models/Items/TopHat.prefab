@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3557545925532289463}
-  - component: {fileID: 3697021227315155213}
+  - component: {fileID: 113384950805555450}
   - component: {fileID: 7572625299405453339}
   m_Layer: 0
   m_Name: TopHat
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3697021227315155213
+--- !u!114 &113384950805555450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,9 +42,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4185288293250618125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0922af6adba28429686a24da596858, type: 3}
+  m_Script: {fileID: 11500000, guid: 89d5c65292eba48489fa34294598bd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: GenericItem
+  hp: 1.1
+  speed: 1.1
+  attackSpeed: 1.1
+  range: 1.1
+  damage: 1.1
+  flavourText: Well atleast this works... Maybe?
 --- !u!65 &7572625299405453339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4420331253061049400}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1.4395131, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4395131, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3557545925532289463}

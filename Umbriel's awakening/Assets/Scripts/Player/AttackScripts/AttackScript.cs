@@ -18,7 +18,7 @@ public class AttackScript : MonoBehaviour
     {
         if (attackCd <= 0)
         {
-            attackCd = playerStats.FireRate;
+            attackCd = playerStats.AttackSpeed;
             Instantiate(attack, player.transform.position, player.transform.rotation);
         }
         else

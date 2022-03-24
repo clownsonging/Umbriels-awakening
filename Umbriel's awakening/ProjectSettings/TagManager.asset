@@ -5,15 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Room
-  - TopHat
-  - Boots
-  - belt
   - PlayerAttack
   - Enemy
   - Coin
   - NullRoom
   - nullRoom
   - SpecialRoom
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2667312056859416133}
   - component: {fileID: 1345425899850815968}
   - component: {fileID: 3841323039050902826}
-  - component: {fileID: 3419754070753088268}
   - component: {fileID: 7978294447826266671}
+  - component: {fileID: 380448592119398889}
   m_Layer: 0
   m_Name: Boots
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3337134903799614719}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.65591717, y: 0.2641452, z: -0.2641452, w: 0.65591717}
   m_LocalPosition: {x: 0, y: 1.4395131, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -83,18 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3419754070753088268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3337134903799614719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0922af6adba28429686a24da596858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &7978294447826266671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,8 +91,27 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3337134903799614719}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.02025483, y: 0.016036466, z: 0.017712295}
   m_Center: {x: -0.00012741517, y: 0.0014242502, z: -0.0014096105}
+--- !u!114 &380448592119398889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3337134903799614719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d5c65292eba48489fa34294598bd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Boots
+  hp: 1
+  speed: 2
+  attackSpeed: 1
+  range: 3
+  damage: 1.5
+  flavourText: I wanted gloves.
