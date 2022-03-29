@@ -10,14 +10,17 @@ public class BaseItem : MonoBehaviour
     [Header("Item attributes")]
     [SerializeField] private string name;
     [SerializeField] private float hp;
+    [SerializeField] private float hpCap;
     [SerializeField] private float speed;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float range;
     [SerializeField] private float damage;
     [SerializeField] private string flavourText;
+    [SerializeField] private ItemHolder holder;
 
     void Start()
     {
+        holder = this.GetComponentInParent<ItemHolder>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerStats = player.GetComponent<PlayerStats>();
     }
@@ -51,17 +54,18 @@ public class BaseItem : MonoBehaviour
 
     public void Apply()
     {
-        playerStats.Hp = Mathf.RoundToInt(playerStats.Hp * hp);
+        playerStats.CurrentHp = Mathf.RoundToInt(playerStats.CurrentHp * hp);
+        playerStats.Hp = Mathf.RoundToInt(playerStats.Hp * hpCap);
         playerStats.Speed = playerStats.Speed * speed;
         playerStats.AttackSpeed = playerStats.AttackSpeed * attackSpeed;
         playerStats.Range = playerStats.Range * range;
         playerStats.Damage = playerStats.Damage * damage;
+        holder.PickUp();
     }
 
     public void OnTriggerEnter()
     {
         Apply();
-        Debug.Log("hit an item: " + this.name);
         Destroy(this.gameObject);
     }
 }

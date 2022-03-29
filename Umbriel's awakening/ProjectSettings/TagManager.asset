@@ -12,6 +12,7 @@ TagManager:
   - nullRoom
   - SpecialRoom
   - Item
+  - Barrier
   layers:
   - Default
   - TransparentFX

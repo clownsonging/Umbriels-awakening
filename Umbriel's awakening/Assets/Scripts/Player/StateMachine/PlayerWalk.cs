@@ -35,6 +35,6 @@ public class PlayerWalk : PlayerBaseState
         Vector2 v2 = controls.ReadValue<Vector2>();
         Vector3 moveDirection = new Vector3(v2.x, 0f, v2.y).normalized;
         moveDirection = Quaternion.Euler(0, 45, 0) * moveDirection;
-        player.transform.position += (moveDirection) * 10 * Time.deltaTime;
+        player.transform.position += (moveDirection) * player.GetComponent<PlayerStats>().Speed * Time.deltaTime;
     }
 }

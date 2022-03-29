@@ -11,10 +11,13 @@ public class RoomNavigation : MonoBehaviour
     [SerializeField] private GameObject East;
     [SerializeField] private GameObject West;
     [SerializeField] private int enemyCount;
+    [SerializeField] private GameObject spawn;
     private bool northBool;
     private bool southBool;
     private bool eastBool;
     private bool westBool;
+
+    public GameObject Spawn { get => spawn; set => spawn = value; }
 
     // Start is called before the first frame update
     public void Portals(bool north, bool east, bool south, bool west)

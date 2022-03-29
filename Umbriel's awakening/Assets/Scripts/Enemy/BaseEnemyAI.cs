@@ -69,6 +69,11 @@ public class BaseEnemyAI : MonoBehaviour
                 damageCooldown = true;
             }
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+                collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
+                Debug.Log("bonk");
+        }
     }
     private void moveTo(Vector3 target)
     {
@@ -91,5 +96,10 @@ public class BaseEnemyAI : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health = health - damage;
+    }
+
+    public void Bonk()
+    {
+        GetRoamingPosition();
     }
 }

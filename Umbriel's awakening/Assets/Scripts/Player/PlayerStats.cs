@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Player stats")]
     [SerializeField] private int hp = 100;
+    [SerializeField] private int currentHp = 100;
     [SerializeField] private float attackSpeed = .1f;
     [SerializeField] private int gold = 30;
     [SerializeField] private int bombs = 3;
@@ -30,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     public float Damage { get => damage; set => damage = value; }
     public float Range { get => range; set => range = value; }
     public float Speed { get => speed; set => speed = value; }
+    public int CurrentHp { get => currentHp; set => currentHp = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +69,7 @@ public class PlayerStats : MonoBehaviour
     }
     void updateUI()
     {
-        hpText.text = "Health: " + hp;
+        hpText.text = "Health: " + currentHp + "/" + hp;
         goldText.text = "Gold: " + gold;
         enemiesText.text = "Enemies Left:" + enemiesLeft;
         bombText.text = "Bombs: " + bombs;

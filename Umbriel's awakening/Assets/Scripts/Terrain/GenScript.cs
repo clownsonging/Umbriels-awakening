@@ -271,7 +271,7 @@ public class GenScript : MonoBehaviour
         {
             playerX--;
         }
-        player.transform.position = new Vector3(floorGrid[playerX, playerY].transform.position.x, 1, floorGrid[playerX, playerY].transform.position.z) ;
+        player.transform.position = floorGrid[playerX, playerY].GetComponentInChildren<RoomNavigation>().Spawn.transform.position; 
         floorGrid[playerX, playerY].SetActive(true);
 
         if (floorGrid[playerX + 1, playerY].gameObject.tag == "Room" || floorGrid[playerX + 1, playerY].gameObject.tag == "SpecialRoom")

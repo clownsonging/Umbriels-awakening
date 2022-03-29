@@ -110,8 +110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Boots
   hp: 1
+  hpCap: 1
   speed: 2
   attackSpeed: 1
   range: 3
   damage: 1.5
   flavourText: I wanted gloves.
+  holder: {fileID: 0}

@@ -11,7 +11,6 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerDash DashState = new PlayerDash();
 
     public Animator animations;
-
     public float dash = 0.25f;
     public InputAction movementControls;
     public InputAction dashButton;
