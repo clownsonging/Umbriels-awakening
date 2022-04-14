@@ -6,6 +6,7 @@ public class BaseItem : MonoBehaviour
 {
     private GameObject player;
     private PlayerStats playerStats;
+    [SerializeField] private StatUI UI;
 
     [Header("Item attributes")]
     [SerializeField] private string name;
@@ -23,6 +24,7 @@ public class BaseItem : MonoBehaviour
         holder = this.GetComponentInParent<ItemHolder>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerStats = player.GetComponent<PlayerStats>();
+        UI = player.GetComponent<StatUI>();
     }
 
     public BaseItem()
@@ -61,6 +63,7 @@ public class BaseItem : MonoBehaviour
         playerStats.Range = playerStats.Range * range;
         playerStats.Damage = playerStats.Damage * damage;
         holder.PickUp();
+        UI.UpdateUI();
     }
 
     public void OnTriggerEnter()

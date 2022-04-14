@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 4213585813661269710}
   m_Layer: 0
   m_Name: BossRoom
-  m_TagString: SpecialRoom
+  m_TagString: BossRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4129721139202873470}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.358, y: -0.23, z: 0}
+  m_LocalPosition: {x: 0.358, y: 1, z: 0}
   m_LocalScale: {x: 0.05, y: 1, z: 0.05}
   m_Children: []
   m_Father: {fileID: 3884082471926092624}
@@ -1202,6 +1202,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5985162529055293022, guid: 1c8c2dd12e0bdad4a960b948907d8aa2, type: 3}
+      propertyPath: bosses.Array.data[0]
+      value: 
+      objectReference: {fileID: 4850378459527884952, guid: ce32ba66687107740a402df1280386c7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c8c2dd12e0bdad4a960b948907d8aa2, type: 3}
 --- !u!4 &7401887215041557356 stripped

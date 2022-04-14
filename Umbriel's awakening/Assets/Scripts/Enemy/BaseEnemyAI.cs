@@ -66,6 +66,7 @@ public class BaseEnemyAI : MonoBehaviour
             if (damageCooldown == false)
             {
                 collision.gameObject.GetComponent<PlayerStats>().Hp = collision.gameObject.GetComponent<PlayerStats>().Hp - damage;
+                collision.gameObject.GetComponent<StatUI>().UpdateUI();
                 damageCooldown = true;
             }
         }

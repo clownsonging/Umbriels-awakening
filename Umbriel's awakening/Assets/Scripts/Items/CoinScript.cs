@@ -5,9 +5,16 @@ using UnityEngine;
 public class CoinScript : MonoBehaviour
 {
     [SerializeField] private int value;
-   public int Hit()
+    [SerializeField] private StatUI UI;
+    
+    private void Start()
+    {
+        UI = GameObject.FindGameObjectWithTag("Player").GetComponent<StatUI>();
+    }
+    public int Hit()
     {
         Destroy(this.gameObject);
+        UI.UpdateUI();
         return value;
     }
 }

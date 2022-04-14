@@ -24,8 +24,24 @@ public class ProjectileScript : MonoBehaviour
     {
         if(collision.gameObject.tag == ("Enemy"))
         {
-            collision.gameObject.GetComponent<BaseEnemyAI>().TakeDamage(damage);
-            Destroy(this.gameObject);
+            try
+            {
+                collision.gameObject.GetComponent<BaseEnemyAI>().TakeDamage(damage);
+                Debug.Log("hit mob");
+                Destroy(this.gameObject);
+            }
+            catch
+            {
+            }
+            try
+            {
+                collision.gameObject.GetComponent<BossHitDetection>().TakeDamage(damage);
+                Destroy(this.gameObject);
+                Debug.Log("hit boss");
+            }
+            catch
+            {
+            }
         }
     }
 }

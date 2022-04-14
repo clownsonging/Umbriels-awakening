@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Player stats")]
+    [SerializeField] private StatUI UI;
     [SerializeField] private int hp = 100;
     [SerializeField] private int currentHp = 100;
     [SerializeField] private float attackSpeed = .1f;
@@ -18,12 +19,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int enemiesLeft = 1;
     [SerializeField] private GameObject generationContainer;
 
-    [Header("UI Containers")]
-    [SerializeField] private Text hpText;
-    [SerializeField] private Text goldText;
-    [SerializeField] private Text enemiesText;
-    [SerializeField] private Text bombText;
-
     public float AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
     public int Hp { get => hp; set => hp = value; }
     public int Gold { get => gold; set => gold = value; }
@@ -32,6 +27,7 @@ public class PlayerStats : MonoBehaviour
     public float Range { get => range; set => range = value; }
     public float Speed { get => speed; set => speed = value; }
     public int CurrentHp { get => currentHp; set => currentHp = value; }
+    public int Bombs { get => bombs; set => bombs = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +39,6 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         RoomClear();
-        updateUI();
     }
 
 
@@ -67,11 +62,10 @@ public class PlayerStats : MonoBehaviour
     {
         enemiesLeft = room.EnemyCount();
     }
-    void updateUI()
+
+    public void DealDamage(int i)
     {
-        hpText.text = "Health: " + currentHp + "/" + hp;
-        goldText.text = "Gold: " + gold;
-        enemiesText.text = "Enemies Left:" + enemiesLeft;
-        bombText.text = "Bombs: " + bombs;
+        currentHp = currentHp - i;
+        UI.UpdateUI();
     }
 }

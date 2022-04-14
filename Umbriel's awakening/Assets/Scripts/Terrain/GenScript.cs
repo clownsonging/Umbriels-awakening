@@ -23,17 +23,25 @@ public class GenScript : MonoBehaviour
     private int widthValue;
     private GameObject[,] floorGrid;
     private GameObject currentRoom;
+    private MapUI map;
 
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject nullRoom;
     [SerializeField] private GameObject roomStore;
-    
 
-    
+    public int Height { get => height; set => height = value; }
+    public int Width { get => width; set => width = value; }
+    public GameObject[,] FloorGrid { get => floorGrid; set => floorGrid = value; }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         GenerateBaseFloor();
+        map = GameObject.FindGameObjectWithTag("MapUI").GetComponent<MapUI>();
+        map.UpdateMap();
     }
 
     private void GenerateBaseFloor()
@@ -41,6 +49,8 @@ public class GenScript : MonoBehaviour
         //Roll dimensions
         heightValue = Random.Range(8, height);
         widthValue = Random.Range(8, width);
+        height = heightValue;
+        width = widthValue;
 
         //Setup grid & fill with null rooms
         floorGrid = new GameObject[widthValue, heightValue];
@@ -297,5 +307,10 @@ public class GenScript : MonoBehaviour
     void TeleportersSet(int x, int y, bool north, bool east, bool south, bool west)
     {
         floorGrid[x, y].GetComponentInChildren<RoomNavigation>().Portals(north, east, south, west);
+    }
+
+    public GameObject[,] GetMap()
+    {
+        return floorGrid;
     }
 }

@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 4020631436357004244}
   m_Layer: 0
   m_Name: ItemRoom
-  m_TagString: SpecialRoom
+  m_TagString: ItemRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
