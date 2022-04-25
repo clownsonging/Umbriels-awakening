@@ -32,6 +32,8 @@ public class GenScript : MonoBehaviour
     public int Height { get => height; set => height = value; }
     public int Width { get => width; set => width = value; }
     public GameObject[,] FloorGrid { get => floorGrid; set => floorGrid = value; }
+    public int PlayerX { get => playerX; set => playerX = value; }
+    public int PlayerY { get => playerY; set => playerY = value; }
 
 
 
@@ -39,9 +41,16 @@ public class GenScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            Instantiate(player);
+            Debug.Log("Spawning player");
+        }
+        player = GameObject.FindGameObjectWithTag("Player");
         GenerateBaseFloor();
         map = GameObject.FindGameObjectWithTag("MapUI").GetComponent<MapUI>();
         map.UpdateMap();
+        map.LightRoom(playerX, playerY);
     }
 
     private void GenerateBaseFloor()
@@ -284,19 +293,19 @@ public class GenScript : MonoBehaviour
         player.transform.position = floorGrid[playerX, playerY].GetComponentInChildren<RoomNavigation>().Spawn.transform.position; 
         floorGrid[playerX, playerY].SetActive(true);
 
-        if (floorGrid[playerX + 1, playerY].gameObject.tag == "Room" || floorGrid[playerX + 1, playerY].gameObject.tag == "SpecialRoom")
+        if (floorGrid[playerX + 1, playerY].gameObject.tag != "NullRoom")
         {
             east = true;
         }
-        if (floorGrid[playerX, playerY - 1].gameObject.tag == "Room" || floorGrid[playerX, playerY-1].gameObject.tag == "SpecialRoom")
+        if (floorGrid[playerX, playerY - 1].gameObject.tag != "NullRoom")
         {
             south = true;
         }
-        if (floorGrid[playerX - 1, playerY].gameObject.tag == "Room" || floorGrid[playerX - 1, playerY].gameObject.tag == "SpecialRoom")
+        if (floorGrid[playerX - 1, playerY].gameObject.tag != "NullRoom")
         {
             west = true;
         }
-        if (floorGrid[playerX, playerY + 1].gameObject.tag == "Room" || floorGrid[playerX, playerY+1].gameObject.tag == "SpecialRoom")
+        if (floorGrid[playerX, playerY + 1].gameObject.tag != "NullRoom" )
         {
             north = true;
         }

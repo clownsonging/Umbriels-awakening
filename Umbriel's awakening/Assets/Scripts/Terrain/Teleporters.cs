@@ -14,7 +14,6 @@ public class Teleporters : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        Debug.Log("Hit: " + direction);
         map.NewRoom(direction);
     }
 }   

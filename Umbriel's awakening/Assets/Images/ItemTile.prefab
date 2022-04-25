@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6131059079742956190}
   - component: {fileID: 6131059079742956188}
   - component: {fileID: 4269212073840653052}
+  - component: {fileID: 6818851412283186403}
   m_Layer: 5
   m_Name: ItemTile
   m_TagString: Untagged
@@ -72,3 +73,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!225 &6818851412283186403
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131059079742956191}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

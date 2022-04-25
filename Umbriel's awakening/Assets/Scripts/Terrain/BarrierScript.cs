@@ -25,7 +25,6 @@ public class BarrierScript : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<BaseEnemyAI>().Bonk();
-            Debug.Log("bonk");
         }
     }
 }

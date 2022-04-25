@@ -20,14 +20,21 @@ public class ProjectileScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == ("Enemy"))
         {
             try
             {
+                collision.gameObject.GetComponent<BaseRangedEnemy>().TakeDamage(damage);
+                Destroy(this.gameObject);
+            }
+            catch
+            {
+            }
+            try
+            {
                 collision.gameObject.GetComponent<BaseEnemyAI>().TakeDamage(damage);
-                Debug.Log("hit mob");
                 Destroy(this.gameObject);
             }
             catch
@@ -37,7 +44,6 @@ public class ProjectileScript : MonoBehaviour
             {
                 collision.gameObject.GetComponent<BossHitDetection>().TakeDamage(damage);
                 Destroy(this.gameObject);
-                Debug.Log("hit boss");
             }
             catch
             {

@@ -68,7 +68,7 @@ public class StatUI : MonoBehaviour
     public void UpdateUI()
     {
         //Base UI
-        hpText.text = "Health: " + stats.Hp + "/" + stats.CurrentHp;
+        hpText.text = "Health: " + stats.CurrentHp + "/" + stats.Hp;
         goldText.text = "Gold: " + stats.Gold;
         bombText.text = "Bombs: " + stats.Bombs;
 

@@ -6,7 +6,6 @@ public class PlayerIdle : PlayerBaseState
 { 
     public override void EnterState(PlayerStateManager player)
     {
-        Debug.Log("Entering idle state.");
         controls = player.movementControls;
         animation = player.animations;
         animation.ResetTrigger("Jump");

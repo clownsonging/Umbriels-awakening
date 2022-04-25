@@ -5,7 +5,6 @@ public class PlayerWalk : PlayerBaseState
 {
     public override void EnterState(PlayerStateManager player)
     {
-        Debug.Log("Entering walking state.");
         controls = player.movementControls;
         dashKey = player.dashButton;
         animation = player.animations;

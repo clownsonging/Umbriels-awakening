@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Player stats")]
@@ -32,9 +33,15 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this);
+        generationContainer = GameObject.FindGameObjectWithTag("Gen");
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        generationContainer = GameObject.FindGameObjectWithTag("Gen");
+    }
     // Update is called once per frame
     void Update()
     {

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEnemyAI : MonoBehaviour
+public class BaseRangedEnemy : MonoBehaviour
 {
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     private Vector3 direction;
     private bool damageCooldown = false;
     private float damageTimer = 1f;
+    private float lockPos = 0f;
+    private bool attacking = false;
 
     [Header("Speed Variables")]
     [SerializeField] private float maxSpeed = 2f;
@@ -19,39 +21,54 @@ public class BaseEnemyAI : MonoBehaviour
     [Header("Targetting")]
     [SerializeField] private GameObject player;
     [SerializeField] private float sightRadius = 5;
+    [SerializeField] private int attackRange = 3;
+    [SerializeField] private GameObject attack;
+    [SerializeField] private GameObject attackSpawn;
 
     [Header("Stats")]
     [SerializeField] private float health = 10;
     [SerializeField] private int damage = 10;
 
-    private void Start()
+    private void Awake()
     {
         startingPosition = transform.position;
         roamPosition = GetRoamingPosition();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    private void Update()
+    {
+        transform.rotation = Quaternion.Euler(lockPos, transform.rotation.eulerAngles.y, lockPos);
+    }
+
     private void FixedUpdate()
     {
-        if (Vector3.Distance(this.transform.position, player.transform.position) > sightRadius)
+        if (Vector3.Distance(this.transform.position, player.transform.position) > sightRadius && attacking == false)
         {
             moveTo(roamPosition);
         }
         else
         {
-            moveTo(player.transform.position);
-            roamPosition = player.transform.position;
-        }
-        if(damageCooldown == true)
-        {
-            damageTimer = damageTimer - Time.deltaTime;
-            if(damageTimer <= 0)
+            roamPosition = this.transform.position;
+            Vector3 targetDirection = player.transform.position - this.transform.position;
+            float singleStep = speedCoefficient * Time.deltaTime;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+            Debug.Log("attacking player");
+            if (damageCooldown == false)
             {
-                damageCooldown = false;
-                damageTimer = 1f;
+                Fire();
+            }
+            else
+            {
+                damageTimer = damageTimer - Time.deltaTime;
+                if (damageTimer <= 0)
+                {
+                    damageCooldown = false;
+                }
             }
         }
-        if(health <= 0)
+        if (health <= 0)
         {
             player.GetComponent<PlayerStats>().EnemiesLeft--;
             Destroy(this.gameObject);
@@ -61,18 +78,10 @@ public class BaseEnemyAI : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            if (damageCooldown == false)
-            {
-                player.GetComponent<PlayerStats>().DealDamage(damage);
-                damageCooldown = true;
-            }
-        }
         if (collision.gameObject.tag == "Enemy")
         {
-                collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
-                Debug.Log("bonk");
+            collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
+            Debug.Log("bonk");
         }
     }
     private void moveTo(Vector3 target)
@@ -101,5 +110,11 @@ public class BaseEnemyAI : MonoBehaviour
     public void Bonk()
     {
         GetRoamingPosition();
+    }
+    public void Fire()
+    {
+        damageTimer = 1f;
+        Instantiate(attack, attackSpawn.transform.position, this.transform.rotation);
+        damageCooldown = true;
     }
 }
