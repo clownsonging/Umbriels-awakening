@@ -8,7 +8,7 @@ public class BaseRangedEnemy : MonoBehaviour
     private Vector3 roamPosition;
     private Vector3 direction;
     private bool damageCooldown = false;
-    private float damageTimer = 1f;
+    private float damageTimer = .3f;
     private float lockPos = 0f;
     private bool attacking = false;
 

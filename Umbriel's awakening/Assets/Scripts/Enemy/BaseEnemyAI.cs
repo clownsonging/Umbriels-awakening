@@ -41,6 +41,10 @@ public class BaseEnemyAI : MonoBehaviour
         {
             moveTo(player.transform.position);
             roamPosition = player.transform.position;
+            Vector3 targetDirection = player.transform.position - this.transform.position;
+            float singleStep = speedCoefficient * Time.deltaTime;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
         }
         if(damageCooldown == true)
         {
