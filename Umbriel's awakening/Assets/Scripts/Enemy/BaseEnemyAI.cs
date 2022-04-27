@@ -8,12 +8,12 @@ public class BaseEnemyAI : MonoBehaviour
     private Vector3 roamPosition;
     private Vector3 direction;
     private bool damageCooldown = false;
-    private float damageTimer = 1f;
+    private float damageTimer = .2f;
 
     [Header("Speed Variables")]
     [SerializeField] private float maxSpeed = 2f;
     [SerializeField] private float minSpeed = .5f;
-    [SerializeField] private float speedCoefficient = 1f;
+    [SerializeField] private float speedCoefficient = 3f;
     [SerializeField] private Rigidbody rb;
 
     [Header("Targetting")]

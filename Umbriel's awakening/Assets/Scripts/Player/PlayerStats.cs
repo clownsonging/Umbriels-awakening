@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float attackSpeed = .1f;
     [SerializeField] private int gold = 30;
     [SerializeField] private int bombs = 3;
-    [SerializeField] private float speed = 1;
+    [SerializeField] private float speed = 20;
     [SerializeField] private float range = 10;
     [SerializeField] private float damage = 10;
 
@@ -36,6 +36,19 @@ public class PlayerStats : MonoBehaviour
         DontDestroyOnLoad(this);
         generationContainer = GameObject.FindGameObjectWithTag("Gen");
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+
+    public void ResetStats()
+    {
+        hp = 100;
+        currentHp = 100;
+        attackSpeed = .1f;
+        gold = 30;
+        speed = 20;
+        range = 10;
+        damage = 10;
+        UI.UpdateUI();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

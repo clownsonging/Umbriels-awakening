@@ -137,7 +137,7 @@ public class GenScript : MonoBehaviour
     private void SpawnRoom(int x, int y, GameObject room)
     {
         Destroy(floorGrid[x, y]);
-        floorGrid[x, y] = Instantiate(room, new Vector3(x * 20 + x, 0, y * 20 + y), Quaternion.identity, roomStore.transform);
+        floorGrid[x, y] = Instantiate(room, new Vector3(x * 50, 0, y * 50), Quaternion.identity, roomStore.transform);
         floorGrid[x, y].GetComponentInChildren<RoomNavigation>().SetPosition(x, y);
     }
 

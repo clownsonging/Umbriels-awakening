@@ -9,12 +9,12 @@ public class BarrierScript : MonoBehaviour
     [SerializeField] private GameObject roomSpawn;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         roomSpawn = room.GetComponentInChildren<RoomNavigation>().Spawn;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (other.gameObject.tag == "Player")
         {
             player.transform.position = roomSpawn.transform.position;

@@ -36,6 +36,7 @@ public class StatUI : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         gameover.enabled = false;
         menu.enabled = false;
         advancedUI.Enable();
