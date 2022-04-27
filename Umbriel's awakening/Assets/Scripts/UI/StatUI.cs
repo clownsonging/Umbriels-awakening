@@ -16,7 +16,6 @@ public class StatUI : MonoBehaviour
     [Header("UI Containers")]
     [SerializeField] private Text hpText;
     [SerializeField] private Text goldText;
-    [SerializeField] private Text bombText;
 
     [Header("Advanced UI Containers")]
     [SerializeField] private Text speedText;
@@ -24,6 +23,7 @@ public class StatUI : MonoBehaviour
     [SerializeField] private Text rangeText;
     [SerializeField] private Text attackSpeedText;
     [SerializeField] private Text enemiesText;
+    [SerializeField] private Canvas ACanvas;
 
     [Header("Escape menu")]
     [SerializeField] private Canvas menu;
@@ -59,7 +59,7 @@ public class StatUI : MonoBehaviour
         {
             Menu();
         }
-        if(stats.Hp <= 0)
+        if(stats.CurrentHp <= 0)
         {
             Time.timeScale = 0;
             gameover.enabled = true;
@@ -68,36 +68,32 @@ public class StatUI : MonoBehaviour
     public void UpdateUI()
     {
         //Base UI
-        hpText.text = "Health: " + stats.CurrentHp + "/" + stats.Hp;
-        goldText.text = "Gold: " + stats.Gold;
-        bombText.text = "Bombs: " + stats.Bombs;
+        hpText.text = stats.CurrentHp + "/" + stats.Hp;
+        goldText.text = stats.Gold.ToString();
 
         //Advanced UI
-        enemiesText.text = "Enemies Left:" + stats.EnemiesLeft;
-        speedText.text = "Speed: " + stats.Speed;
-        damageText.text = "Damage: " + stats.Damage;
-        rangeText.text = "Range: " + stats.Range;
-        attackSpeedText.text = "Attack speed: " + stats.AttackSpeed;
+        enemiesText.text = stats.EnemiesLeft.ToString();
+        speedText.text = stats.Speed.ToString();
+        damageText.text = stats.Damage.ToString();
+        rangeText.text = stats.Range.ToString();
+        attackSpeedText.text = stats.AttackSpeed.ToString();
+    
+        if(stats.EnemiesLeft == -1)
+        {
+            enemiesText.text = "0";
+        }
     }
 
     void ToggleAdvancedUI()
     {
         if(AUI == false)
         {
-            enemiesText.enabled = false;
-            speedText.enabled = false;
-            damageText.enabled = false;
-            rangeText.enabled = false;
-            attackSpeedText.enabled = false;
+            ACanvas.enabled = false;
             AUI = true;
         }
         else
         {
-            enemiesText.enabled = true;
-            speedText.enabled = true;
-            damageText.enabled = true;
-            rangeText.enabled = true;
-            attackSpeedText.enabled = true;
+            ACanvas.enabled = true;
             AUI = false;
         }
     }
