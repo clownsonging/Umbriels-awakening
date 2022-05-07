@@ -49,8 +49,6 @@ public class GenScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         GenerateBaseFloor();
         map = GameObject.FindGameObjectWithTag("MapUI").GetComponent<MapUI>();
-        map.UpdateMap();
-        map.LightRoom(playerX, playerY);
     }
 
     private void GenerateBaseFloor()

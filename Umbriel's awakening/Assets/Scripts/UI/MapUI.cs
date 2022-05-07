@@ -27,6 +27,7 @@ public class MapUI : MonoBehaviour
         gen = GameObject.FindGameObjectWithTag("Gen").GetComponent<GenScript>();
         mapToggle.Enable();
         panels = new GameObject[gen.Width, gen.Height];
+        UpdateMap();
     }
 
     private void Update()

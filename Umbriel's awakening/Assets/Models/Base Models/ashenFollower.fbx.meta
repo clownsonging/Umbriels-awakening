@@ -1,23 +1,11 @@
 fileFormatVersion: 2
-guid: 3283dde8d13de3741a569accaacae364
+guid: a9fd822efb50c144ea01c0de31fa3fb2
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -3820347529501215343
-    second: Armature|01.Flight
-  - first:
-      74: -4996909574339665694
-    second: Armature|01.Flight.001
-  - first:
-      74: 9123675476771670050
-    second: Armature|fly
-  - first:
-      74: -7780547471327655992
-    second: Armature|01.Flight (1)
-  - first:
-      74: 439387698275782148
-    second: Armature|01.Flight.001 (1)
+      74: -1526587520015316018
+    second: Armature|01.walk
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -47,69 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|01.Flight
-      takeName: Armature|01.Flight
+      name: Armature|01.walk
+      takeName: Armature|01.walk
       internalID: 0
       firstFrame: 0
-      lastFrame: 4
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|01.Flight.001
-      takeName: Armature|01.Flight.001
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 4
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|01.Flight (1)
-      takeName: Armature|01.Flight
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 4
+      lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
