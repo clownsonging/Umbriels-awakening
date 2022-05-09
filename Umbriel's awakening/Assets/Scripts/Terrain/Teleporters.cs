@@ -12,8 +12,12 @@ public class Teleporters : MonoBehaviour
         map = GameObject.Find("Generation2.0").GetComponent<GenScript>();
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        map.NewRoom(direction);
+        Debug.Log("haha");
+        if (other.gameObject.tag == "Player")
+        {
+            map.NewRoom(direction);
+        }
     }
 }   

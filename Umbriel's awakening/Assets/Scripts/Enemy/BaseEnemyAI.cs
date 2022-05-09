@@ -75,8 +75,15 @@ public class BaseEnemyAI : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            try
+            {
                 collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
-                Debug.Log("bonk");
+            }
+            catch
+            {
+                collision.gameObject.GetComponent<BaseRangedEnemy>().Bonk();
+            }    
+            Debug.Log("bonk");
         }
     }
     private void moveTo(Vector3 target)

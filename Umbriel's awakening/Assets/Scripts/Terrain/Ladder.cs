@@ -7,6 +7,6 @@ public class Ladder : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("FirstScene");
+        SceneManager.LoadScene("SecondScene");
     }
 }

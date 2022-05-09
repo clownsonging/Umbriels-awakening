@@ -19,15 +19,12 @@ public class MapUI : MonoBehaviour
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private Canvas map;
     private GameObject[,] panels;
-    private GenScript gen;
+    [SerializeField] private GenScript gen;
 
 
     private void Start()
     {
-        gen = GameObject.FindGameObjectWithTag("Gen").GetComponent<GenScript>();
         mapToggle.Enable();
-        panels = new GameObject[gen.Width, gen.Height];
-        UpdateMap();
     }
 
     private void Update()
@@ -41,6 +38,9 @@ public class MapUI : MonoBehaviour
 
     public void UpdateMap()
     {
+        gen = GameObject.FindGameObjectWithTag("Gen").GetComponent<GenScript>();
+        panels = new GameObject[gen.Width, gen.Height];
+        Debug.Log(gen.Height);
         for (int i = 0; i < gen.Height; i++)
         {
             for(int j = 0; j < gen.Width; j++)

@@ -22,7 +22,6 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.gameObject.name);
         if(collision.gameObject.tag == ("Enemy"))
         {
             try

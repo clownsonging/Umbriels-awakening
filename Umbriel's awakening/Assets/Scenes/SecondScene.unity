@@ -286,6 +286,7 @@ MonoBehaviour:
   player: {fileID: 6884648089456777404, guid: dd15ad7fcb30f194987c4d143cd90fcd, type: 3}
   playerX: 0
   playerY: 0
+  map: {fileID: 1588376584}
   coin: {fileID: 5651413078748718206, guid: bd7a6253690684b45bf4e4b558506f57, type: 3}
   nullRoom: {fileID: 2499689228250549426, guid: bf58e70ec9ddcfa4fa3c3f4c1ea98f5f, type: 3}
   roomStore: {fileID: 830771572}
@@ -445,6 +446,7 @@ MonoBehaviour:
   itemPanel: {fileID: 6131059079742956191, guid: 9ee0d97c51111a5409f84719a43fb9cf, type: 3}
   shopPanel: {fileID: 6131059079742956191, guid: f40ba9c346e17084eb1eb0bb512dacc6, type: 3}
   map: {fileID: 1588376587}
+  gen: {fileID: 0}
 --- !u!114 &1588376585
 MonoBehaviour:
   m_ObjectHideFlags: 0

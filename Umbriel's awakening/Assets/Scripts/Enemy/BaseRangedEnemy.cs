@@ -10,7 +10,6 @@ public class BaseRangedEnemy : MonoBehaviour
     private bool damageCooldown = false;
     private float damageTimer = .3f;
     private float lockPos = 0f;
-    private bool attacking = false;
 
     [Header("Speed Variables")]
     [SerializeField] private float maxSpeed = 2f;
@@ -43,11 +42,11 @@ public class BaseRangedEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(this.transform.position, player.transform.position) > sightRadius && attacking == false)
+        if (Vector3.Distance(this.transform.position, player.transform.position) > sightRadius)
         {
             moveTo(roamPosition);
         }
-        else
+        if(Vector3.Distance(this.transform.position, player.transform.position) > sightRadius)
         {
             roamPosition = this.transform.position;
             Vector3 targetDirection = player.transform.position - this.transform.position;
@@ -80,7 +79,14 @@ public class BaseRangedEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
+            try
+            {
+                collision.gameObject.GetComponent<BaseEnemyAI>().Bonk();
+            }
+            catch
+            {
+                collision.gameObject.GetComponent<BaseRangedEnemy>().Bonk();
+            }
             Debug.Log("bonk");
         }
     }

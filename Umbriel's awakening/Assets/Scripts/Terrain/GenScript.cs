@@ -23,7 +23,7 @@ public class GenScript : MonoBehaviour
     private int widthValue;
     private GameObject[,] floorGrid;
     private GameObject currentRoom;
-    private MapUI map;
+    [SerializeField] private MapUI map;
 
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject nullRoom;
@@ -77,7 +77,7 @@ public class GenScript : MonoBehaviour
         playerY = Mathf.RoundToInt(heightValue / 2);
         NewRoom(0);
         RoomClear();
-        
+        map.UpdateMap();
     }
 
     private void fillFloor(GameObject room)
@@ -253,6 +253,7 @@ public class GenScript : MonoBehaviour
 
     public void RoomClear()
     {
+        Debug.Log("Room Clear");
         floorGrid[playerX, playerY].GetComponentInChildren<RoomNavigation>().ActivatePortals();
         int coinAmount = Random.Range(1, 5);
         while (coinAmount > 0)

@@ -4988,25 +4988,6 @@ Transform:
   m_Father: {fileID: 7719285162836874562}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &669977900545054155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726147761593680978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 3337134903799614719, guid: 669ed2c625621cb4c84e6b5f460ee180, type: 3}
-  - {fileID: 4264455655047474076, guid: 631495102091fa846954627871f6d4b2, type: 3}
-  player: {fileID: 0}
-  rareItemList: []
-  spawnLocation: {fileID: 4125737891716061536}
-  cost: 10
 --- !u!1 &2437045161380508987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,24 +5100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.038527217, y: 0.03647795, z: 0.054932695}
   m_Center: {x: 0, y: 0.000082744315, z: 0.017466346}
---- !u!114 &4663986827935321167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7303062740701680846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 6359092584674853964, guid: 1478c9c7848720643aeef360ae8fa2dc, type: 3}
-  player: {fileID: 0}
-  rareItemList: []
-  spawnLocation: {fileID: 90129024535513596}
-  cost: 5
 --- !u!1 &2525026169413997247
 GameObject:
   m_ObjectHideFlags: 0
@@ -15497,6 +15460,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.038527217, y: 0.03647795, z: 0.054932695}
   m_Center: {x: 0, y: 0.000082744315, z: 0.017466346}
+--- !u!114 &1358394750209706305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396526451656464200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 5751015948007787155, guid: d4ebe63ba7ae6f048900abd0cc7fe276, type: 3}
+  player: {fileID: 0}
+  rareItemList: []
+  spawnLocation: {fileID: 5421034121004436090}
+  cost: 15
 --- !u!1 &3729801834918334224
 GameObject:
   m_ObjectHideFlags: 0
@@ -20385,7 +20366,7 @@ MonoBehaviour:
   South: {fileID: 2437045161380508987}
   East: {fileID: 137698157370656923}
   West: {fileID: 2905604435281999268}
-  enemyCount: 3
+  enemyCount: -1
   spawn: {fileID: 4141754438140361339}
 --- !u!1 &4379483460143927235
 GameObject:
@@ -36226,6 +36207,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &669977900545054155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726147761593680978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 3337134903799614719, guid: 669ed2c625621cb4c84e6b5f460ee180, type: 3}
+  - {fileID: 4264455655047474076, guid: 631495102091fa846954627871f6d4b2, type: 3}
+  player: {fileID: 0}
+  rareItemList: []
+  spawnLocation: {fileID: 4125737891716061536}
+  cost: 10
 --- !u!1 &7164960693805137146
 GameObject:
   m_ObjectHideFlags: 0
@@ -41030,24 +41030,24 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1358394750209706305
+--- !u!114 &4663986827935321167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3396526451656464200}
+  m_GameObject: {fileID: 7303062740701680846}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c18b7dcadf57bc448f2db8c08ffc867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 5751015948007787155, guid: d4ebe63ba7ae6f048900abd0cc7fe276, type: 3}
+  - {fileID: 6359092584674853964, guid: 1478c9c7848720643aeef360ae8fa2dc, type: 3}
   player: {fileID: 0}
   rareItemList: []
-  spawnLocation: {fileID: 5421034121004436090}
-  cost: 15
+  spawnLocation: {fileID: 90129024535513596}
+  cost: 5
 --- !u!1 &8494973973704881158
 GameObject:
   m_ObjectHideFlags: 0
